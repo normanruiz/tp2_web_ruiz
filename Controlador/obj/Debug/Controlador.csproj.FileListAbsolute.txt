@@ -1,0 +1,11 @@
+C:\Users\Norman Ruiz\source\repos\TP2_WEB_Ruiz\Controlador\bin\Debug\Controlador.dll
+C:\Users\Norman Ruiz\source\repos\TP2_WEB_Ruiz\Controlador\bin\Debug\Controlador.pdb
+C:\Users\Norman Ruiz\source\repos\TP2_WEB_Ruiz\Controlador\bin\Debug\Modelo.dll
+C:\Users\Norman Ruiz\source\repos\TP2_WEB_Ruiz\Controlador\bin\Debug\Servicio.dll
+C:\Users\Norman Ruiz\source\repos\TP2_WEB_Ruiz\Controlador\bin\Debug\Modelo.pdb
+C:\Users\Norman Ruiz\source\repos\TP2_WEB_Ruiz\Controlador\bin\Debug\Servicio.pdb
+C:\Users\Norman Ruiz\source\repos\TP2_WEB_Ruiz\Controlador\obj\Debug\Controlador.csprojAssemblyReference.cache
+C:\Users\Norman Ruiz\source\repos\TP2_WEB_Ruiz\Controlador\obj\Debug\Controlador.csproj.CoreCompileInputs.cache
+C:\Users\Norman Ruiz\source\repos\TP2_WEB_Ruiz\Controlador\obj\Debug\Controlador.csproj.CopyComplete
+C:\Users\Norman Ruiz\source\repos\TP2_WEB_Ruiz\Controlador\obj\Debug\Controlador.dll
+C:\Users\Norman Ruiz\source\repos\TP2_WEB_Ruiz\Controlador\obj\Debug\Controlador.pdb

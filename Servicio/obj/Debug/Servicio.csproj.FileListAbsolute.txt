@@ -1,0 +1,6 @@
+C:\Users\Norman Ruiz\source\repos\TP2_WEB_Ruiz\Servicio\bin\Debug\Servicio.dll
+C:\Users\Norman Ruiz\source\repos\TP2_WEB_Ruiz\Servicio\bin\Debug\Servicio.pdb
+C:\Users\Norman Ruiz\source\repos\TP2_WEB_Ruiz\Servicio\obj\Debug\Servicio.csprojAssemblyReference.cache
+C:\Users\Norman Ruiz\source\repos\TP2_WEB_Ruiz\Servicio\obj\Debug\Servicio.csproj.CoreCompileInputs.cache
+C:\Users\Norman Ruiz\source\repos\TP2_WEB_Ruiz\Servicio\obj\Debug\Servicio.dll
+C:\Users\Norman Ruiz\source\repos\TP2_WEB_Ruiz\Servicio\obj\Debug\Servicio.pdb
