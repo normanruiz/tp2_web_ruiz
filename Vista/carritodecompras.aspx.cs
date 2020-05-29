@@ -30,6 +30,21 @@ namespace Vista
                 }
                 else
                 {
+                    if(Request.QueryString["idIncrementar"] != null)
+                    {
+                        listaCarrito[Convert.ToInt32(Request.QueryString["idIncrementar"])] += 1;
+                    }
+                    if (Request.QueryString["idDecrementar"] != null )
+                    {
+                        if (Convert.ToInt32(Request.QueryString["idDecrementar"]) > 0)
+                        {
+                            listaCarrito[Convert.ToInt32(Request.QueryString["idDecrementar"])] -= 1;
+                        }
+                    }
+                    if (Request.QueryString["idQuitar"] != null)
+                    {
+                        listaCarrito.Remove(Convert.ToInt32(Request.QueryString["idQuitar"]));
+                    }
                     ListaCarrito = new List<Articulo>();
                     ListaCarritoaux = controlador.Listar();
                     foreach(int idAux in listaCarrito.Keys)
@@ -39,9 +54,8 @@ namespace Vista
                         AcumuladorTotal += listaCarrito[idAux] * articuloAux.Precio;
                     }
                     ContCantidad = listaCarrito.Values.Sum();
+                    
                 }
-                
-                //listaCarrito = (Dictionary<int, int>)Session["Session_id_" + Session.SessionID + "_ListaCarrito"];
             }
             catch (Exception excepcion)
             {
@@ -50,5 +64,6 @@ namespace Vista
             }
 
         }
+
     }
 }

@@ -15,9 +15,7 @@ namespace Vista
     {
         public Articulo articuloDetalle { get; set; }
         public List<Articulo> listaArticulosCarrito { get; set; }
-
         Dictionary<int, int> listaCarrito = new Dictionary<int, int>();
-
         protected void Page_Load(object sender, EventArgs e)
         {
             ControladorArticulo controladorAux = new ControladorArticulo();
@@ -39,7 +37,6 @@ namespace Vista
                 Response.Redirect("error.aspx");
             }
         }
-
         protected void btnCArgarCArrito_Click(object sender, EventArgs e)
         {
             try
@@ -53,6 +50,7 @@ namespace Vista
                     listaCarrito[articuloDetalle.Id] += 1;
                 }
                 Session.Add("Session_id_" + Session.SessionID + "_ListaCarrito", listaCarrito);
+                Response.Redirect("carritodecompras.aspx", false);
             }
             catch (Exception excepcion)
             {

@@ -37,7 +37,7 @@
                             <% foreach (Modelo.Articulo articulo in ListaCarrito)
                                 { %>
                             <tr>
-                                <td scope="row" style="visibility:hidden;"><% = articulo.Id %></td>
+                                <td scope="row" style="visibility: hidden;"><% = articulo.Id %></td>
                                 <td>
                                     <p>
                                         <a class="btn btn-primary" data-toggle="collapse" href="#collapse-<% =articulo.Id %>" role="button" aria-expanded="false" aria-controls="collapseExample"><% = articulo.Nombre %></a>
@@ -63,12 +63,9 @@
                                 </td>
                                 <td><% = articulo.Precio %></td>
                                 <td><% = listaCarrito[articulo.Id] %></td>
-                                <td>
-                                    <asp:Button Text="+1" runat="server" /></td>
-                                <td>
-                                    <asp:Button Text="-1" runat="server" /></td>
-                                <td>
-                                    <asp:Button Text="Quitar" runat="server" /></td>
+                                <td><a id="btnIncremento<% = articulo.Id %>" class="btn btn-primary btn-lg" href="carritodecompras.aspx?idIncrementar=<% = articulo.Id %>" role="button">+</a></td>
+                                <td><a id="btnDecremento<% = articulo.Id %>" class="btn btn-primary btn-lg" href="carritodecompras.aspx?idDecrementar=<% = articulo.Id %>" role="button">-</a></td>
+                                <td><a id="btnQuitar<% = articulo.Id %>" class="btn btn-primary btn-lg" href="carritodecompras.aspx?idQuitar=<% = articulo.Id %>" role="button">Quitar</a></td>
                             </tr>
                             <%} %>
                         </tbody>
