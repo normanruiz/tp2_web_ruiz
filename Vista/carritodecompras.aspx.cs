@@ -30,31 +30,36 @@ namespace Vista
                 }
                 else
                 {
-                    if(Request.QueryString["idIncrementar"] != null)
+
+                    if (Request.QueryString["idIncrementar"] != null)
                     {
                         listaCarrito[Convert.ToInt32(Request.QueryString["idIncrementar"])] += 1;
+                        Response.Redirect("carritodecompras.aspx", false);
                     }
-                    if (Request.QueryString["idDecrementar"] != null )
+                    if (Request.QueryString["idDecrementar"] != null)
                     {
-                        if (Convert.ToInt32(Request.QueryString["idDecrementar"]) > 0)
+                        if (listaCarrito[Convert.ToInt32(Request.QueryString["idDecrementar"])] > 1)
                         {
                             listaCarrito[Convert.ToInt32(Request.QueryString["idDecrementar"])] -= 1;
+                            Response.Redirect("carritodecompras.aspx", false);
                         }
                     }
                     if (Request.QueryString["idQuitar"] != null)
                     {
                         listaCarrito.Remove(Convert.ToInt32(Request.QueryString["idQuitar"]));
+                        Response.Redirect("carritodecompras.aspx", false);
                     }
+
                     ListaCarrito = new List<Articulo>();
                     ListaCarritoaux = controlador.Listar();
-                    foreach(int idAux in listaCarrito.Keys)
+                    foreach (int idAux in listaCarrito.Keys)
                     {
                         articuloAux = ListaCarritoaux.Find(j => j.Id == idAux);
                         ListaCarrito.Add(articuloAux);
                         AcumuladorTotal += listaCarrito[idAux] * articuloAux.Precio;
                     }
                     ContCantidad = listaCarrito.Values.Sum();
-                    
+
                 }
             }
             catch (Exception excepcion)
@@ -65,5 +70,25 @@ namespace Vista
 
         }
 
+        protected void btnComprar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                listaCarrito = (Dictionary<int, int>)Session["Session_id_" + Session.SessionID + "_ListaCarrito"];
+                if (listaCarrito != null)
+                {
+                    if (listaCarrito.Sum(i => i.Value) > 0)
+                    {
+                        Session.Remove("Session_id_" + Session.SessionID + "_ListaCarrito");
+                        Response.Redirect("CatalogoCompras.aspx", false);
+                    }
+                }
+            }
+            catch (Exception excepcion)
+            {
+                Session.Add("Session_id_" + Session.SessionID + "_error", excepcion.Message);
+                Response.Redirect("error.aspx");
+            }
+        }
     }
 }

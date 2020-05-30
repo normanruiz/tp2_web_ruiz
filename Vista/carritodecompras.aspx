@@ -11,7 +11,7 @@
                 <div class="col-sm">
                 </div>
                 <div class="col-sm">
-                    <a class="btn btn-primary btn-lg" href="CatalogoCompras.aspx" role="button">Realizar la compra</a>
+                    <asp:Button ID="btnComprar" CssClass="btn btn-primary btn-lg" Text="Realizar la compra" runat="server" OnClick="btnComprar_Click" />
                 </div>
             </div>
         </div>

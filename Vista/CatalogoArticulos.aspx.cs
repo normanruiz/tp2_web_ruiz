@@ -22,7 +22,8 @@ namespace Vista
             }
             catch (Exception excepcion)
             {
-                //MessageBox.Show(excepcion.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Session.Add("Session_id_" + Session.SessionID + "_error", excepcion.Message);
+                Response.Redirect("error.aspx");
             }
         }
     }
